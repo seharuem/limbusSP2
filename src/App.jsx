@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import { filters } from './filter';
-import { Tab, Box, Filter } from './style';
+import { Tab, Box, Filter, Card } from './style';
 
 function App() {
 	const menu = ['수감자', '자원', '주요 키워드', '기타 키워드'];
@@ -78,7 +78,10 @@ function App() {
 							</Filter>
 						))}
 					</div>
-					<div className='flex-1 overflow-auto'></div>
+					<div className='flex-1 overflow-auto flex gap-2 flex-wrap'>
+						<Card>
+						</Card>
+					</div>
 				</Box>
 			</div>
 		</>

@@ -34,3 +34,7 @@ export const Filter = styled.button.attrs({
 		color: black;
 	}
 `;
+
+export const Card = styled.div.attrs({
+	className: 'flex gap-2 bg-white/20 p-4 h-max rounded-2xl size-20'
+})``;
