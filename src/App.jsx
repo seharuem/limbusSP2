@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import { filters } from './filter';
-import { Tab, Box, Filter, Card } from './style';
+import { Tab, Box, Filter } from './style';
+import Data from './Data';
+import { Key } from './key';
 
 function App() {
 	const menu = ['수감자', '자원', '주요 키워드', '기타 키워드'];
@@ -64,7 +66,7 @@ function App() {
 				</div>
 
 				<Box>
-					<div className='min-h-0 flex flex-wrap gap-2'>
+					<div className='flex flex-wrap gap-2'>
 						<Filter className={all && 'select'} onClick={allClick}>
 							All
 						</Filter>
@@ -78,10 +80,8 @@ function App() {
 							</Filter>
 						))}
 					</div>
-					<div className='flex-1 overflow-auto flex gap-2 flex-wrap'>
-						<Card>
-						</Card>
-					</div>
+
+					<Data />
 				</Box>
 			</div>
 		</>

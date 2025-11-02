@@ -1,4 +1,4 @@
-const filter1 = [
+export const char = [
 	'이상',
 	'파우스트',
 	'돈키호테',
@@ -13,9 +13,9 @@ const filter1 = [
 	'그레고르'
 ];
 
-const filter2 = ['분노', '색욕', '나태', '탐식', '우울', '오만', '질투'];
+export const res = ['분노', '색욕', '나태', '탐식', '우울', '오만', '질투'];
 
-const filter3 = [
+export const key1 = [
 	'화상',
 	'출혈',
 	'진동',
@@ -28,6 +28,6 @@ const filter3 = [
 	'타격'
 ];
 
-const filter4 = ['공격', '수비', '회복', '탄환', '버림', '혈찬'];
+export const key2 = ['공격', '수비', '회복', '탄환', '버림', '혈찬'];
 
-export const filters = [filter1, filter2, filter3, filter4];
+export const filters = [char, res, key1, key2];
