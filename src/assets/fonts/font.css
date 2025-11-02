@@ -1,0 +1,15 @@
+@font-face {
+	font-family: KOTRA_BOLD;
+	src: url('./KOTRA_BOLD.otf') format('opentype'),
+		url('./KOTRA_BOLD.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Pretendard;
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+	src: url('./PretendardVariable.woff2') format('woff2-variations');
+}

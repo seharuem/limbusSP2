@@ -1,35 +1,88 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import './App.css';
+import { filters } from './filter';
+import { Tab, Box, Filter } from './style';
 
 function App() {
-  const [count, setCount] = useState(0)
+	const menu = ['수감자', '자원', '주요 키워드', '기타 키워드'];
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	const [activeTab, setActiveTab] = useState(menu[0]);
+	const [activeIndex, setActiveIndex] = useState(0);
+	const [all, setAll] = useState(true);
+	const [onFilter, setOnFilter] = useState(filters[activeIndex]);
+
+	const tabClick = (item, index) => {
+		if (activeIndex !== index) {
+			setActiveTab(item);
+			setActiveIndex(index);
+			setOnFilter(filters[index]);
+		}
+	};
+
+	const allClick = () => {
+		if (onFilter === filters[activeIndex]) {
+			setOnFilter([]);
+		} else {
+			setOnFilter(filters[activeIndex]);
+		}
+	};
+
+	const filterClick = (item) => {
+		if (onFilter.includes(item)) {
+			setOnFilter(onFilter.filter((f) => f !== item));
+		} else {
+			setOnFilter([...onFilter, item]);
+		}
+	};
+
+	useEffect(() => {
+		if (onFilter.length === filters[activeIndex].length) {
+			setAll(true);
+		} else {
+			setAll(false);
+		}
+	}, [onFilter, activeIndex, filters]);
+
+	return (
+		<>
+			<h1>
+				<span>LIMBUS COMPANY</span>
+				서포트 패시브
+			</h1>
+
+			<div className='flex flex-col py-2 flex-1 max-h-screen'>
+				<div className='flex w-full'>
+					{menu.map((item, index) => (
+						<Tab
+							key={item}
+							className={activeTab === item && 'active'}
+							onClick={() => tabClick(item, index)}
+						>
+							{item}
+						</Tab>
+					))}
+				</div>
+
+				<Box>
+					<div className='min-h-0 flex flex-wrap gap-2'>
+						<Filter className={all && 'select'} onClick={allClick}>
+							All
+						</Filter>
+						{filters[activeIndex].map((item) => (
+							<Filter
+								key={item}
+								className={onFilter.includes(item) && 'select'}
+								onClick={() => filterClick(item)}
+							>
+								{item}
+							</Filter>
+						))}
+					</div>
+					<div className='flex-1 overflow-auto'></div>
+				</Box>
+			</div>
+		</>
+	);
 }
 
-export default App
+export default App;
