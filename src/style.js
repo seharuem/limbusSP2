@@ -43,7 +43,12 @@ export const Card = styled.div.attrs({
 	min-width: min(80%, 400px);
 	max-width: 600px;
 	box-shadow: 0 0
-		${(props) => (props.$res >= 0 ? `5px ${key[props.$res]}` : '2px #999')};
+		${(props) =>
+			props.$num > 6
+				? '5px #eee'
+				: props.$num >= 0
+				? `5px ${key[props.$num]}`
+				: '2px #999'};
 
 	@media (max-width: 600px) {
 		flex-direction: column;
@@ -54,7 +59,8 @@ export const Img = styled.div.attrs({
 	className: 'rounded-xl border-3 border-solid w-max h-40 aspect-3/4'
 })`
 	background: center / contain no-repeat;
-	background-image: url(/img/char/${(props) => `01/${props.$num}.png`});
+	background-image: url(/img/char/${(props) =>
+		`${props.$char}/${props.$num}.png`});
 	border-color: ${(props) =>
 		`${
 			props.$num > 300 ? border[0] : props.$num > 200 ? border[1] : border[2]

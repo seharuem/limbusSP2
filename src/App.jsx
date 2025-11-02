@@ -81,7 +81,7 @@ function App() {
 						))}
 					</div>
 
-					<Data />
+					<Data onFilter={onFilter} />
 				</Box>
 			</div>
 		</>

@@ -15,8 +15,7 @@ export const key = [
 	'#6adcb9',
 	'#3b79dc',
 	'#b4d5d8',
-	'#35d5f4',
-	'#eee'
+	'#35d5f4'
 ];
 
 export const border = ['#ffcc00', '#972213', '#aaa'];

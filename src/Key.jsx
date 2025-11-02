@@ -5,10 +5,10 @@ import styled from 'styled-components';
 const KeyStyle = styled.span.attrs({
 	className: 'font-extrabold underline'
 })`
-	color: ${(props) => key[props.$num]};
+	color: ${(props) => (props.$num > 6 ? '#eee' : key[props.$num])};
 `;
 
-const number = Array.from({ length: 7 }, (_, i) => i);
+const number = Array.from({ length: 10 }, (_, i) => i);
 
 export const Key = number.map((num) => (
 	<KeyStyle $num={num}>{key1[num]}</KeyStyle>
