@@ -59,7 +59,7 @@ export const Img = styled.div.attrs({
 	className: 'rounded-lg border-3 border-solid w-max h-40 aspect-3/4'
 })`
 	background: center / contain no-repeat;
-	background-image: url(/img/char/${(props) =>
+	background-image: url(./img/char/${(props) =>
 		`${props.$char}/${props.$num}.png`});
 	border-color: ${(props) =>
 		`${
@@ -84,7 +84,7 @@ export const Res = styled.div.attrs({
 	className: 'aspect-square size-5'
 })`
 	background: center / contain no-repeat;
-	background-image: url(/img/res/${(props) => `${props.$res}.webp`});
+	background-image: url(./img/res/${(props) => `${props.$res}.webp`});
 `;
 
 export const St = styled.span.attrs({
