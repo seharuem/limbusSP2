@@ -6,6 +6,6 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig(({ mode }) => {
 	return {
 		plugins: [react(), tailwindcss()],
-		base: mode === 'production' ? '/limbusSP2/' : '/'
+		base: '/limbusSP2/'
 	};
 });
