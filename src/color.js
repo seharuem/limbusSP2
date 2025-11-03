@@ -5,7 +5,8 @@ export const res = [
 	'#7fab3a',
 	'#3e819c',
 	'#2a5184',
-	'#550c82'
+	'#550c82',
+	'linear-gradient(to right, #d46a37, #550c82)'
 ];
 
 export const key = [

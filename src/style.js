@@ -40,7 +40,7 @@ export const Card = styled.div.attrs({
 	className: 'flex-1 flex gap-2 bg-white/10 p-5 h-max rounded-2xl font-semibold'
 })`
 	font-family: Pretendard;
-	min-width: min(80%, 400px);
+	min-width: 420px;
 	max-width: 600px;
 	box-shadow: 0 0
 		${(props) =>
@@ -56,7 +56,7 @@ export const Card = styled.div.attrs({
 `;
 
 export const Img = styled.div.attrs({
-	className: 'rounded-xl border-3 border-solid w-max h-40 aspect-3/4'
+	className: 'rounded-lg border-3 border-solid w-max h-40 aspect-3/4'
 })`
 	background: center / contain no-repeat;
 	background-image: url(/img/char/${(props) =>
@@ -74,7 +74,10 @@ export const Img = styled.div.attrs({
 export const Title = styled.span.attrs({
 	className: 'w-full rounded-full text-[15px] break-keep'
 })`
-	background-color: ${(props) => res[props.$res]};
+	background: ${(props) =>
+		Array.isArray(props.$res)
+			? `linear-gradient(to right, ${props.$res.map((r) => res[r]).join(',')})`
+			: res[props.$res]};
 `;
 
 export const Res = styled.div.attrs({
@@ -87,3 +90,9 @@ export const Res = styled.div.attrs({
 export const St = styled.span.attrs({
 	className: 'font-extrabold'
 })``;
+
+export const Text = styled.div.attrs({
+	className: 'flex-1 flex justify-center items-center text-3xl'
+})`
+	font-family: KOTRA_BOLD;
+`;
