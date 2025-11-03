@@ -81,7 +81,7 @@ Error generating stack: `+a.message+`
 	}
 `,ov=Xl.div.attrs({className:"rounded-lg border-3 border-solid w-max h-40 aspect-3/4"})`
 	background: center / contain no-repeat;
-	background-image: url(/img/char/${c=>`${c.$char}/${c.$num}.png`});
+	background-image: url(./img/char/${c=>`${c.$char}/${c.$num}.png`});
 	border-color: ${c=>`${c.$num>300?dr[0]:c.$num>200?dr[1]:dr[2]}`};
 
 	@media (max-width: 600px) {
@@ -91,7 +91,7 @@ Error generating stack: `+a.message+`
 	background: ${c=>Array.isArray(c.$res)?`linear-gradient(to right, ${c.$res.map(h=>Io[h]).join(",")})`:Io[c.$res]};
 `,yv=Xl.div.attrs({className:"aspect-square size-5"})`
 	background: center / contain no-repeat;
-	background-image: url(/img/res/${c=>`${c.$res}.webp`});
+	background-image: url(./img/res/${c=>`${c.$res}.webp`});
 `,r=Xl.span.attrs({className:"font-extrabold"})``,vv=Xl.div.attrs({className:"flex-1 flex justify-center items-center text-3xl"})`
 	font-family: KOTRA_BOLD;
 `,gv=Xl.span.attrs({className:"font-extrabold underline"})`
