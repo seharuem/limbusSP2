@@ -42,7 +42,7 @@ export const char08 = [
 	},
 	{
 		id: 203,
-		key: 2,
+		key: [2, 3],
 		name: '로보토미 E.G.O::출렁임',
 		title: '부식 점액',
 		res: 4,
@@ -97,7 +97,7 @@ export const char08 = [
 	},
 	{
 		id: 303,
-		key: 4,
+		key: [2, 4],
 		name: '어금니 보트 센터 해결사',
 		title: '절박',
 		res: 5,

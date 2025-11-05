@@ -184,7 +184,7 @@ export const char11 = [
 	},
 	{
 		id: 308,
-		key: 3,
+		key: [0, 3],
 		name: '흑수 - 유',
 		title: '혈염도 [血炎刀]',
 		res: [0, 3],

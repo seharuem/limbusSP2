@@ -3,7 +3,8 @@ import './App.css';
 import { filters } from './filter';
 import { Tab, Box, Filter, Text } from './style';
 import Data from './Data';
-import { Key } from './key';
+import { resData } from './charData/charData';
+
 
 function App() {
 	const menu = ['수감자', '자원', '주요 키워드', '기타 키워드'];
@@ -27,6 +28,7 @@ function App() {
 		} else {
 			setOnFilter(filters[activeIndex]);
 		}
+		console.log(resData)
 	};
 
 	const filterClick = (item) => {
@@ -84,7 +86,7 @@ function App() {
 					{onFilter.length === 0 ? (
 						<Text>필터를 선택해주세요 ! ! !</Text>
 					) : (
-						<Data onFilter={onFilter} />
+						<Data index={activeIndex} filter={onFilter} />
 					)}
 				</Box>
 			</div>

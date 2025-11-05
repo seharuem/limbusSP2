@@ -111,7 +111,7 @@ export const char05 = [
 	},
 	{
 		id: 304,
-		key: 5,
+		key: [5, 7],
 		name: '검계 우두머리',
 		title: '본국검술',
 		res: 5,

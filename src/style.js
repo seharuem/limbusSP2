@@ -40,15 +40,18 @@ export const Card = styled.div.attrs({
 	className: 'flex-1 flex gap-2 bg-white/10 p-5 h-max rounded-2xl font-semibold'
 })`
 	font-family: Pretendard;
-	min-width: 420px;
+	min-width: min(100%, 420px);
 	max-width: 600px;
-	box-shadow: 0 0
-		${(props) =>
-			props.$num > 6
-				? '5px #eee'
-				: props.$num >= 0
-				? `5px ${key[props.$num]}`
-				: '2px #999'};
+	box-shadow: ${(props) =>
+		Array.isArray(props.$num)
+			? `-1px -1px 3px ${key[props.$num[0]]}, 1px 1px 3px ${
+					props.$num[1] > 6 ? key[props.$num[0]] : key[props.$num[1]]
+			  }`
+			: props.$num > 6
+			? '0 0 4px #eee'
+			: props.$num >= 0
+			? `-1px -1px 3px ${key[props.$num]}, 1px 1px 3px ${key[props.$num]}`
+			: '0 0 2px #999'};
 
 	@media (max-width: 600px) {
 		flex-direction: column;
@@ -60,7 +63,7 @@ export const Img = styled.div.attrs({
 })`
 	background: center / contain no-repeat;
 	background-image: url(./img/char/${(props) =>
-		`${props.$char}/${props.$num}.png`});
+		`${props.$img}/${props.$num}.png`});
 	border-color: ${(props) =>
 		`${
 			props.$num > 300 ? border[0] : props.$num > 200 ? border[1] : border[2]

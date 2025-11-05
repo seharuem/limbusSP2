@@ -61,7 +61,7 @@ export const char12 = [
 	},
 	{
 		id: 204,
-		key: 2,
+		key: 1,
 		name: '약지 점묘파 스튜던트',
 		title: '밑그림',
 		res: 1,

@@ -159,7 +159,7 @@ export const char04 = [
 	},
 	{
 		id: 307,
-		key: 1,
+		key: [1, 2],
 		name: 'N사 E.G.O::경멸, 경외',
 		title: '그건 흐르고 울린다',
 		res: 1,

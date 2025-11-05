@@ -1,4 +1,4 @@
-import { char } from '../filter';
+import { char, res, key1 } from '../filter';
 import { char01 } from './01';
 import { char02 } from './02';
 import { char03 } from './03';
@@ -26,3 +26,32 @@ export const charData = [
 	{ char: '12', name: char[10], data: char12 },
 	{ char: '13', name: char[11], data: char13 }
 ];
+
+const inputData = (data, i, img) =>
+	data.map((item) => ({ char: char[i], img: img, ...item }));
+
+const allData = charData.flatMap((item, i) =>
+	inputData(item.data, i, item.char)
+);
+
+const resFilter = (data, i) =>
+	data.filter((f) => (Array.isArray(f.res) ? f.res.includes(i) : f.res === i));
+
+export const resData = Array.from({ length: 7 }, (_, i) => {
+	const dataFilter = resFilter(allData, i);
+	return {
+		res: res[i],
+		data: dataFilter
+	};
+});
+
+const keyFilter = (data, i) =>
+	data.filter((f) => (Array.isArray(f.key) ? f.key.includes(i) : f.key === i));
+
+export const key1Data = Array.from({ length: 10 }, (_, i) => {
+	const dataFilter = keyFilter(allData, i);
+	return {
+		key: key1[i],
+		data: dataFilter
+	};
+});

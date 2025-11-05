@@ -43,7 +43,7 @@ export const char13 = [
 	},
 	{
 		id: 203,
-		key: 3,
+		key: [2, 3],
 		name: '장미스패너 공방 해결사',
 		title: '톱날 정비',
 		res: 3,

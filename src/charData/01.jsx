@@ -44,7 +44,7 @@ export const char01 = [
 	},
 	{
 		id: 203,
-		key: 1,
+		key: [1, 5],
 		name: '피쿼드호 일등 항해사',
 		title: '일등 항해사의 노련함',
 		res: 5,
@@ -110,7 +110,7 @@ export const char01 = [
 	},
 	{
 		id: 303,
-		key: 6,
+		key: [3, 6],
 		name: 'W사 3등급 정리 요원',
 		title: '정리 시범 교육',
 		res: 3,

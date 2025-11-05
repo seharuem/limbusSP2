@@ -71,7 +71,7 @@ export const char06 = [
 	},
 	{
 		id: 205,
-		key: 3,
+		key: [1, 3],
 		name: '송곳니 사냥 사무소 해결사',
 		title: '혈귀 공략 교본 - 지혈',
 		res: 3,
