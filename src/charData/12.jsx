@@ -4,6 +4,7 @@ import { St } from '../style';
 export const char12 = [
 	{
 		id: 101,
+		key2: 0,
 		name: 'LCB 수감자',
 		title: '군인정신',
 		res: 2,
@@ -17,6 +18,7 @@ export const char12 = [
 	},
 	{
 		id: 201,
+		key2: 0,
 		name: '검계 살수',
 		title: '확인사살',
 		res: 5,
@@ -30,6 +32,7 @@ export const char12 = [
 	},
 	{
 		id: 202,
+		key2: [0, 1],
 		name: 'G사 부장',
 		title: '각오',
 		res: 2,
@@ -77,6 +80,7 @@ export const char12 = [
 	},
 	{
 		id: 301,
+		key2: 0,
 		name: '남부 세븐 협회 6과 부장',
 		title: '정보 공유',
 		res: 3,
@@ -104,6 +108,7 @@ export const char12 = [
 	},
 	{
 		id: 303,
+		key2: 0,
 		name: '로보토미 E.G.O::마탄',
 		title: '의뢰 작업',
 		res: 5,
@@ -118,6 +123,7 @@ export const char12 = [
 	},
 	{
 		id: 304,
+		key2: 0,
 		name: '워더링하이츠 치프 버틀러',
 		title: '버틀러 교육',
 		res: 4,
@@ -178,6 +184,7 @@ export const char12 = [
 	},
 	{
 		id: 308,
+		key2: 0,
 		name: 'T사 3등급 강력징수직 직원',
 		title: '신속 공무 집행',
 		res: 2,

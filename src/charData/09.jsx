@@ -4,6 +4,7 @@ import { St } from '../style';
 export const char09 = [
 	{
 		id: 101,
+		key2: 0,
 		name: 'LCB 수감자',
 		title: '도박사',
 		res: 0,
@@ -16,6 +17,7 @@ export const char09 = [
 	},
 	{
 		id: 201,
+		key2: 0,
 		name: 'LCCB 대리',
 		title: '브리칭',
 		res: 6,
@@ -29,6 +31,7 @@ export const char09 = [
 	},
 	{
 		id: 202,
+		key2: 0,
 		name: 'N사 중간 망치',
 		title: '차오르는 신앙',
 		res: 0,
@@ -170,6 +173,7 @@ export const char09 = [
 	},
 	{
 		id: 308,
+		key2: 0,
 		name: '로보토미 E.G.O::눈물로 벼려낸 검',
 		title: '절망하는 모든 자들을 위해...',
 		res: 4,

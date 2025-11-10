@@ -1,11 +1,11 @@
-import styled from 'styled-components';
-import { res, key, border } from './color';
+import styled, { css } from 'styled-components';
+import { res, keyColor, border } from './color';
 
 export const Tab = styled.button.attrs({
 	className: 'flex-1 pt-2 pb-1 rounded-t-2xl text-white bg-white/20'
 })`
 	font-family: KOTRA_BOLD;
-	transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+	transition: background-color 0.2s ease-out, color 0.3s ease-out;
 
 	&:hover {
 		background-color: #666;
@@ -18,21 +18,74 @@ export const Tab = styled.button.attrs({
 
 export const Box = styled.div.attrs({
 	className:
-		'flex-1 border-3 border-solid border-(--main) rounded-b-2xl p-2 flex flex-col gap-2 overflow-hidden'
+		'flex-1 border-3 border-solid border-(--main) rounded-b-2xl py-3 px-1 flex flex-col gap-3 overflow-hidden'
 })``;
 
+const tabFolder = (tab) => {
+	if (tab === 0) return 'logo';
+	if (tab === 1) return 'res';
+	if (tab === 2) return 'key';
+	return 'key2';
+};
+
 export const Filter = styled.button.attrs({
-	className: 'px-4 pt-1 bg-white/20 rounded-full'
+	className:
+		'text-sm px-4 py-1 bg-white/15 rounded-full flex gap-2 items-center'
 })`
 	font-family: KOTRA_BOLD;
-	transition: background-color 0.2s ease-out, color 0.2s ease-out;
+	border: 2px solid transparent;
+	transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
 
 	&:hover {
 		background-color: #666;
 	}
 	&.select {
-		background-color: white;
-		color: black;
+		border-color: rgba(255, 255, 255, 0.7);
+		border-color: var(--main);
+	}
+	&::before {
+		content: ${(props) => props.$num >= 0 && "''"};
+		width: 20px;
+		aspect-ratio: 1;
+		background: center / contain no-repeat;
+		background-image: url(./img/${(props) => tabFolder(props.$tab)}/${(props) =>
+			props.$num}.webp);
+	}
+`;
+
+const shadow = (num) => {
+	if (Array.isArray(num)) {
+		const first = keyColor[num[0]];
+		const second = num[1] > 6 ? first : keyColor[num[1]];
+		return css`
+			box-shadow: -1px -1px 3px ${first}, 1px 1px 3px ${second};
+		`;
+	}
+	if (num > 6)
+		return css`
+			box-shadow: 0 0 4px #eee;
+		`;
+	if (num >= 0) {
+		const color = keyColor[num];
+		return css`
+			box-shadow: -1px -1px 3px ${color}, 1px 1px 3px ${color};
+		`;
+	}
+	return css`
+		box-shadow: 0 0 2px #999;
+	`;
+};
+
+export const DataWrap = styled.div.attrs({
+	className: 'flex justify-center gap-4 flex-wrap py-1 pl-3 pr-2 overflow-auto'
+})`
+	scrollbar-gutter: stable;
+	&::-webkit-scrollbar {
+		width: 4px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--main);
+		border-radius: 4px;
 	}
 `;
 
@@ -42,16 +95,7 @@ export const Card = styled.div.attrs({
 	font-family: Pretendard;
 	min-width: min(100%, 420px);
 	max-width: 600px;
-	box-shadow: ${(props) =>
-		Array.isArray(props.$num)
-			? `-1px -1px 3px ${key[props.$num[0]]}, 1px 1px 3px ${
-					props.$num[1] > 6 ? key[props.$num[0]] : key[props.$num[1]]
-			  }`
-			: props.$num > 6
-			? '0 0 4px #eee'
-			: props.$num >= 0
-			? `-1px -1px 3px ${key[props.$num]}, 1px 1px 3px ${key[props.$num]}`
-			: '0 0 2px #999'};
+	${(props) => shadow(props.$num)}
 
 	@media (max-width: 600px) {
 		flex-direction: column;

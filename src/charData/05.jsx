@@ -4,6 +4,7 @@ import { St } from '../style';
 export const char05 = [
 	{
 		id: 101,
+		key2: 1,
 		name: 'LCB 수감자',
 		title: '등뒤 받쳐주기',
 		res: 2,
@@ -43,6 +44,7 @@ export const char05 = [
 	},
 	{
 		id: 203,
+		key2: 2,
 		name: '중지 작은 아우',
 		title: '한 식구',
 		res: 6,
@@ -83,6 +85,7 @@ export const char05 = [
 	},
 	{
 		id: 302,
+		key2: [0, 1],
 		name: 'N사 큰 망치',
 		title: '으뜸 영광',
 		res: 0,
@@ -125,6 +128,7 @@ export const char05 = [
 	},
 	{
 		id: 305,
+		key2: 4,
 		name: '남부 디에치 협회 4과 부장',
 		title: '성실한 배움',
 		res: 4,
@@ -141,6 +145,7 @@ export const char05 = [
 	},
 	{
 		id: 306,
+		key2: 0,
 		name: '서부 섕크 협회 3과',
 		title: '한 발 더 빠르게',
 		res: 5,
@@ -154,6 +159,7 @@ export const char05 = [
 	},
 	{
 		id: 307,
+		key2: 3,
 		name: '동부 엄지 카포 IIII',
 		title: '맹호의 도약',
 		res: 2,
@@ -169,6 +175,7 @@ export const char05 = [
 	},
 	{
 		id: 308,
+		key2: 5,
 		name: '라만차랜드 왕자',
 		title: '잔이 넘치도록',
 		res: 1,

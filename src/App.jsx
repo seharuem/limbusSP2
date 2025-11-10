@@ -3,8 +3,6 @@ import './App.css';
 import { filters } from './filter';
 import { Tab, Box, Filter, Text } from './style';
 import Data from './Data';
-import { resData } from './charData/charData';
-
 
 function App() {
 	const menu = ['수감자', '자원', '주요 키워드', '기타 키워드'];
@@ -28,7 +26,6 @@ function App() {
 		} else {
 			setOnFilter(filters[activeIndex]);
 		}
-		console.log(resData)
 	};
 
 	const filterClick = (item) => {
@@ -68,13 +65,15 @@ function App() {
 				</div>
 
 				<Box>
-					<div className='flex flex-wrap gap-2'>
+					<div className='flex flex-wrap gap-2 px-3'>
 						<Filter className={all && 'select'} onClick={allClick}>
 							All
 						</Filter>
-						{filters[activeIndex].map((item) => (
+						{filters[activeIndex].map((item, i) => (
 							<Filter
 								key={item}
+								$tab={activeIndex}
+								$num={i}
 								className={onFilter.includes(item) && 'select'}
 								onClick={() => filterClick(item)}
 							>

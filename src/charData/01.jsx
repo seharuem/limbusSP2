@@ -4,6 +4,7 @@ import { St } from '../style';
 export const char01 = [
 	{
 		id: 101,
+		key2: 2,
 		name: 'LCB 수감자',
 		title: '정보중화',
 		res: 4,
@@ -17,6 +18,7 @@ export const char01 = [
 	},
 	{
 		id: 201,
+		key2: 0,
 		name: '남부 세븐 협회 6과',
 		title: '분석',
 		res: 3,
@@ -58,6 +60,7 @@ export const char01 = [
 	},
 	{
 		id: 204,
+		key2: 4,
 		name: '남부 디에치 협회 4과',
 		title: '반복 지식',
 		res: 2,
@@ -72,6 +75,7 @@ export const char01 = [
 	},
 	{
 		id: 205,
+		key2: 0,
 		name: 'LCE E.G.O::초롱',
 		title: 'E.G.O가 붕괴될 때 거름과 같이 분해되오',
 		res: 3,
@@ -98,6 +102,7 @@ export const char01 = [
 	},
 	{
 		id: 302,
+		key2: 0,
 		name: '개화 E.G.O::동백',
 		title: '알싸한 봄바람',
 		res: 2,
@@ -171,13 +176,14 @@ export const char01 = [
 	},
 	{
 		id: 307,
+		key2: 0,
 		name: 'N사 E.G.O::흉탄',
 		title: '대상 지정',
 		res: 5,
 		req: '4 공명',
 		detail: (
 			<>
-				속도가 가장 느린 아군이 아군을 공격했다면, 공격 종료 시, 다음 턴에
+				속도가 가장 느린 아군이 아군을 공격했다면, 공격 종료 시, 다음 턴에{' '}
 				<St>피해량 증가 1</St> 얻음 (턴 당 <St>최대 2</St>).
 				<br />- 이때, 아군이 사망했으면, 위 효과를 대신하여 이번 전투 동안{' '}
 				<St>피해량 증가 1</St> 얻음 (스테이지 및 인격당 <St>최대 2</St>). <br />
@@ -187,6 +193,7 @@ export const char01 = [
 	},
 	{
 		id: 308,
+		key2: [1, 2],
 		name: '흑수 - 오 필두',
 		title: '검은 갑각이 살을 째고 돋아 날 지키리',
 		res: 3,

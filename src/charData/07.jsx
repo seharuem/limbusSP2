@@ -17,6 +17,7 @@ export const char07 = [
 	},
 	{
 		id: 201,
+		key2: 0,
 		name: '남부 시 협회 5과',
 		title: '자신을 돌보지 않음',
 		res: 0,
@@ -30,6 +31,7 @@ export const char07 = [
 	},
 	{
 		id: 202,
+		key2: 0,
 		name: 'N사 작은 망치',
 		title: '독경',
 		res: 1,
@@ -164,6 +166,7 @@ export const char07 = [
 	},
 	{
 		id: 307,
+		key2: 0,
 		name: '흑운회 와카슈',
 		title: '후벼파기',
 		res: 1,

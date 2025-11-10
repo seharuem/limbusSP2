@@ -30,6 +30,7 @@ export const char03 = [
 	},
 	{
 		id: 202,
+		key2: 0,
 		name: 'N사 중간 망치',
 		title: '맹목의 망치',
 		res: 1,
@@ -43,6 +44,7 @@ export const char03 = [
 	},
 	{
 		id: 203,
+		key2: 2,
 		name: '로보토미 E.G.O::초롱',
 		title: '초롱초롱',
 		res: 3,
@@ -71,6 +73,7 @@ export const char03 = [
 	},
 	{
 		id: 301,
+		key2: 0,
 		name: 'W사 3등급 정리 요원',
 		title: '꺾인 마음',
 		res: 4,
@@ -83,6 +86,7 @@ export const char03 = [
 	},
 	{
 		id: 302,
+		key2: 0,
 		name: '남부 섕크 협회 5과 부장',
 		title: '결투 의뢰',
 		res: 5,
@@ -125,6 +129,7 @@ export const char03 = [
 	},
 	{
 		id: 305,
+		key2: 0,
 		name: '라만차랜드 실장',
 		title: `'가족들이여 억눌러온 허기를 채워라'`,
 		res: 1,

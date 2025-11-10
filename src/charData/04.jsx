@@ -4,6 +4,7 @@ import { St } from '../style';
 export const char04 = [
 	{
 		id: 101,
+		key2: 0,
 		name: 'LCB 수감자',
 		title: '등떠밀기',
 		res: 3,
@@ -31,6 +32,7 @@ export const char04 = [
 	{
 		id: 202,
 		key: 5,
+		key2: 3,
 		name: 'LCCB 대리',
 		title: '돛대',
 		res: 5,
@@ -91,6 +93,7 @@ export const char04 = [
 	},
 	{
 		id: 302,
+		key2: 2,
 		name: '료.고.파. 주방장',
 		title: '예술적인 맛',
 		res: 1,
@@ -133,6 +136,7 @@ export const char04 = [
 	},
 	{
 		id: 305,
+		key2: 2,
 		name: '로보토미 E.G.O::적안ᆞ참회',
 		title: '먹고 자라',
 		res: 6,
@@ -147,6 +151,7 @@ export const char04 = [
 	},
 	{
 		id: 306,
+		key2: 0,
 		name: '흑수 - 묘',
 		title: '부분 흑수화 수련',
 		res: 3,
@@ -172,7 +177,8 @@ export const char04 = [
 				<St>횟수 1 증가</St>
 				<br /> 편성 순서가 가장 빠른 아군 1명이 적에게 피격시, 공격자에게{' '}
 				{Key[2]} <St>1</St> 부여 (턴 당 최대 <St>3회</St>)
-				<br /> - 공격자에게 {Key[2]}이 있으면, 추가로 {Key[2]} <St>횟수 1 증가</St>
+				<br /> - 공격자에게 {Key[2]}이 있으면, 추가로 {Key[2]}{' '}
+				<St>횟수 1 증가</St>
 			</>
 		)
 	}

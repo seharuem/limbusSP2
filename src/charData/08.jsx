@@ -4,6 +4,7 @@ import { St } from '../style';
 export const char08 = [
 	{
 		id: 101,
+		key2: 0,
 		name: 'LCB 수감자',
 		title: '살아남고 말것이라는 마음',
 		res: 0,
@@ -17,6 +18,7 @@ export const char08 = [
 	},
 	{
 		id: 201,
+		key2: 1,
 		name: '남부 시 협회 5과',
 		title: '투쟁',
 		res: 6,
@@ -30,6 +32,7 @@ export const char08 = [
 	},
 	{
 		id: 202,
+		key2: 1,
 		name: 'LCCB 대리',
 		title: '매뉴얼대로',
 		res: 3,
@@ -125,6 +128,7 @@ export const char08 = [
 	},
 	{
 		id: 305,
+		key2: 1,
 		name: '서부 츠바이 협회 3과',
 		title: '긴급수호',
 		res: 5,
@@ -152,6 +156,7 @@ export const char08 = [
 	},
 	{
 		id: 307,
+		key2: [0, 1],
 		name: '가주 후보',
 		title: '여환 [餘桓]',
 		res: 3,
@@ -164,6 +169,20 @@ export const char08 = [
 				시작 시 체력이 최대 체력의 50% 이하이고, 수비 스킬을 사용한 인격 중 편성
 				순서가 가장 빠른 인격이 턴 종료 시 피해로 인한 흐트러짐을 해제하고{' '}
 				<St>전장 퇴각</St>함 (전투 당 <St>2회</St> 발동)
+			</>
+		)
+	},
+	{
+		id: 308,
+		key2: 2,
+		name: '정사무소 대표',
+		title: '중계',
+		res: [2, 4],
+		req: '3 보유',
+		detail: (
+			<>
+				정신력이 가장 낮은 아군 1명의 기본 공격 스킬로 앞면 적중시, 해당 아군{' '}
+				<St>정신력 5 회복</St> (턴당 <St>1회</St>, 정신력 -40인 아군 제외)
 			</>
 		)
 	}

@@ -4,6 +4,7 @@ import { St } from '../style';
 export const char02 = [
 	{
 		id: 101,
+		key2: 0,
 		name: 'LCB 수감자',
 		title: '관찰',
 		res: 5,
@@ -31,6 +32,7 @@ export const char02 = [
 	},
 	{
 		id: 202,
+		key2: 1,
 		name: '살아남은 로보토미 직원',
 		title: '지지',
 		res: 1,
@@ -44,6 +46,7 @@ export const char02 = [
 	},
 	{
 		id: 203,
+		key2: 1,
 		name: '남부 츠바이 협회 4과',
 		title: '보호 요청 수신',
 		res: 4,
@@ -72,6 +75,7 @@ export const char02 = [
 	},
 	{
 		id: 301,
+		key2: 2,
 		name: '쥐는 자',
 		title: '속삭임',
 		res: 1,
@@ -101,6 +105,7 @@ export const char02 = [
 	},
 	{
 		id: 303,
+		key2: 0,
 		name: '로보토미 E.G.O::후회',
 		title: '억압 작업',
 		res: 0,

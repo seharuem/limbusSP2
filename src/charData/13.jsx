@@ -1,10 +1,10 @@
-import { key } from '../color';
 import { Key } from '../key';
 import { St } from '../style';
 
 export const char13 = [
 	{
 		id: 101,
+		key2: 2,
 		name: 'LCB 수감자',
 		title: '인자코드 G-0',
 		res: 4,
@@ -17,6 +17,7 @@ export const char13 = [
 	},
 	{
 		id: 201,
+		key2: 0,
 		name: '남부 리우 협회 6과',
 		title: '내달리는 마음',
 		res: 2,
@@ -29,6 +30,7 @@ export const char13 = [
 	},
 	{
 		id: 202,
+		key2: 2,
 		name: '료.고.파. 조수',
 		title: '조리 보조',
 		res: 1,
@@ -71,6 +73,7 @@ export const char13 = [
 	},
 	{
 		id: 301,
+		key2: 2,
 		name: 'G사 일등대리',
 		title: '인자코드 G-3',
 		res: 3,
@@ -83,6 +86,7 @@ export const char13 = [
 	},
 	{
 		id: 302,
+		key2: 1,
 		name: '남부 츠바이 협회 4과',
 		title: '당신의 방패',
 		res: 2,
@@ -110,6 +114,7 @@ export const char13 = [
 	},
 	{
 		id: 304,
+		key2: 0,
 		name: '에드가 가문 승계자',
 		title: '시달림',
 		res: 4,
@@ -161,6 +166,21 @@ export const char13 = [
 			<>
 				전투 중 자신이 사망했으면, 이후 대기 해제되는 인격 중 편성 순서가 가장
 				빠른 대상 1명에게 매 턴마다 전투 시작시 {Key[5]} <St>2</St> 부여
+			</>
+		)
+	},
+	{
+		id: 308,
+		key2: 0,
+		name: '밤의 송곳 카피타노',
+		title: '틈새 노리기',
+		res: 2,
+		req: '3 공명',
+		detail: (
+			<>
+				속도가 가장 빠른 아군 1명이 기본 공격 스킬 사용 시 메인 타겟의 속도가
+				자신보다 느리면 속도 차이 3당, 대상에게 <St>수비 위력 감소 1 부여</St>{' '}
+				(턴당 <St>최대 2</St>)
 			</>
 		)
 	}

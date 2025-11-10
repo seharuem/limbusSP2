@@ -4,6 +4,7 @@ import { St } from '../style';
 export const char11 = [
 	{
 		id: 101,
+		key2: 0,
 		name: 'LCB 수감자',
 		title: '앙심',
 		res: 5,
@@ -17,6 +18,7 @@ export const char11 = [
 	},
 	{
 		id: 201,
+		key2: 1,
 		name: '남부 츠바이 협회 6과',
 		title: '뚝심',
 		res: 4,
@@ -29,6 +31,7 @@ export const char11 = [
 	},
 	{
 		id: 202,
+		key2: 0,
 		name: '마리아치 보스',
 		title: '농락',
 		res: 4,
@@ -70,6 +73,7 @@ export const char11 = [
 	},
 	{
 		id: 205,
+		key2: [0, 1],
 		name: '서부 츠바이 협회 3과',
 		title: '의뢰 대상 보호',
 		res: 2,
@@ -83,6 +87,7 @@ export const char11 = [
 	},
 	{
 		id: 301,
+		key2: 0,
 		name: '검계 살수',
 		title: '피 묻힌 손',
 		res: 5,
@@ -110,6 +115,7 @@ export const char11 = [
 	},
 	{
 		id: 303,
+		key2: 0,
 		name: '남부 섕크 협회 4과 부장',
 		title: '느리시네요',
 		res: 5,
@@ -151,6 +157,7 @@ export const char11 = [
 	},
 	{
 		id: 306,
+		key2: [0, 1],
 		name: '중지 작은 아우',
 		title: '빽',
 		res: 6,
@@ -165,6 +172,7 @@ export const char11 = [
 	},
 	{
 		id: 307,
+		key2: 3,
 		name: '동부 엄지 솔다토 II',
 		title: '재장전',
 		res: 5,

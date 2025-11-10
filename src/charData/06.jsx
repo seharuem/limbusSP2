@@ -4,6 +4,7 @@ import { St } from '../style';
 export const char06 = [
 	{
 		id: 101,
+		key2: 2,
 		name: 'LCB 수감자',
 		title: '실없는 농담',
 		res: 2,
@@ -87,6 +88,7 @@ export const char06 = [
 	},
 	{
 		id: 301,
+		key2: 0,
 		name: '콩콩이파 두목',
 		title: '승부수',
 		res: 3,
@@ -99,6 +101,7 @@ export const char06 = [
 	},
 	{
 		id: 302,
+		key2: 2,
 		name: 'K사 3등급 적출직 직원',
 		title: '고농축 앰플',
 		res: 3,
@@ -112,6 +115,7 @@ export const char06 = [
 	},
 	{
 		id: 303,
+		key2: 2,
 		name: '남부 디에치 협회 4과',
 		title: '깨우침',
 		res: 4,
@@ -139,6 +143,7 @@ export const char06 = [
 	},
 	{
 		id: 305,
+		key2: 3,
 		name: '마침표 사무소 대표',
 		title: '제압 사격',
 		res: 5,
@@ -167,6 +172,7 @@ export const char06 = [
 	},
 	{
 		id: 307,
+		key2: 0,
 		name: '홍원 군주',
 		title: '꼬리는 밟히지 말고 처리해주세요.',
 		res: 3,
