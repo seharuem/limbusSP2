@@ -53,6 +53,28 @@ export const Filter = styled.button.attrs({
 	}
 `;
 
+export const DataWrap = styled.div.attrs({
+	className: 'flex-1 flex justify-center gap-4 flex-wrap py-1 pl-3 pr-2 overflow-auto bg-white/5'
+})`
+	scrollbar-gutter: stable;
+	&::-webkit-scrollbar {
+		width: 4px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--main);
+		border-radius: 4px;
+	}
+`;
+
+export const Hide = styled.button.attrs({
+	type: 'button',
+	className: 'bg-white/10 p-5 h-max rounded-2xl font-semibold'
+})`
+	@media (min-width: 600px) {
+		display: none;
+	}
+`;
+
 const shadow = (num) => {
 	if (Array.isArray(num)) {
 		const first = keyColor[num[0]];
@@ -75,19 +97,6 @@ const shadow = (num) => {
 		box-shadow: 0 0 2px #999;
 	`;
 };
-
-export const DataWrap = styled.div.attrs({
-	className: 'flex justify-center gap-4 flex-wrap py-1 pl-3 pr-2 overflow-auto'
-})`
-	scrollbar-gutter: stable;
-	&::-webkit-scrollbar {
-		width: 4px;
-	}
-	&::-webkit-scrollbar-thumb {
-		background-color: var(--main);
-		border-radius: 4px;
-	}
-`;
 
 export const Card = styled.div.attrs({
 	className: 'flex-1 flex gap-2 bg-white/10 p-5 h-max rounded-2xl font-semibold'

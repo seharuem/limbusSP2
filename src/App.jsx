@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import { filters } from './filter';
-import { Tab, Box, Filter, Text } from './style';
+import { Tab, Box, Filter, Hide, Text } from './style';
 import Data from './Data';
 
 function App() {
@@ -81,6 +81,8 @@ function App() {
 							</Filter>
 						))}
 					</div>
+
+					{/* <Hide>dd</Hide> */}
 
 					{onFilter.length === 0 ? (
 						<Text>필터를 선택해주세요 ! ! !</Text>
