@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import { filters } from './filter';
-import { Tab, Box, Filter, Hide, Text } from './style';
+import { Tab, Box, Filter, Check, Hide, Text } from './style';
 import Data from './Data';
 
 function App() {
@@ -66,18 +66,19 @@ function App() {
 
 				<Box>
 					<div className='flex flex-wrap gap-2 px-3'>
-						<Filter className={all && 'select'} onClick={allClick}>
+						<Filter>
 							All
+							<Check checked={all} onChange={allClick} />
+							{all && <div></div>}
 						</Filter>
 						{filters[activeIndex].map((item, i) => (
-							<Filter
-								key={item}
-								$tab={activeIndex}
-								$num={i}
-								className={onFilter.includes(item) && 'select'}
-								onClick={() => filterClick(item)}
-							>
+							<Filter key={item} $tab={activeIndex} $num={i}>
 								{item}
+								<Check
+									checked={onFilter.includes(item)}
+									onChange={() => filterClick(item)}
+								/>
+								{onFilter.includes(item) && <div></div>}
 							</Filter>
 						))}
 					</div>

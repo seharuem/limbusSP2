@@ -28,21 +28,13 @@ const tabFolder = (tab) => {
 	return 'key2';
 };
 
-export const Filter = styled.button.attrs({
-	className:
-		'text-sm px-4 py-1 bg-white/15 rounded-full flex gap-2 items-center'
+export const Filter = styled.label.attrs({
+	className: 'text-sm flex gap-1 items-center cursor-pointer relative'
 })`
 	font-family: KOTRA_BOLD;
 	border: 2px solid transparent;
 	transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
 
-	&:hover {
-		background-color: #666;
-	}
-	&.select {
-		border-color: rgba(255, 255, 255, 0.7);
-		border-color: var(--main);
-	}
 	&::before {
 		content: ${(props) => props.$num >= 0 && "''"};
 		width: 20px;
@@ -51,10 +43,42 @@ export const Filter = styled.button.attrs({
 		background-image: url(./img/${(props) => tabFolder(props.$tab)}/${(props) =>
 			props.$num}.webp);
 	}
+	&:hover input {
+		border-color: var(--main);
+	}
+`;
+
+export const Check = styled.input.attrs({
+	type: 'checkbox',
+	name: 'filter',
+	className: 'cursor-pointer'
+})`
+	appearance: none;
+	width: 16px;
+	aspect-ratio: 1;
+	border: 2px solid white;
+	border-radius: 4px;
+	background-color: rgba(255, 255, 255, 0.2);
+
+	&:checked {
+		border-color: var(--main);
+	}
+
+	& + div {
+		width: 20px;
+		aspect-ratio: 1;
+		background: var(--main);
+		mask: center / contain no-repeat;
+		mask-image: url(./img/check.svg);
+		position: absolute;
+		right: 0;
+		translate: 5px -5px
+	}
 `;
 
 export const DataWrap = styled.div.attrs({
-	className: 'flex-1 flex justify-center gap-4 flex-wrap py-1 pl-3 pr-2 overflow-auto bg-white/5'
+	className:
+		'flex-1 flex justify-center gap-4 flex-wrap py-1 pl-3 pr-2 overflow-auto bg-white/5'
 })`
 	scrollbar-gutter: stable;
 	&::-webkit-scrollbar {
