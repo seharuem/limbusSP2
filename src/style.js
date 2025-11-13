@@ -14,6 +14,10 @@ export const Tab = styled.button.attrs({
 		background-color: var(--main);
 		color: black;
 	}
+
+	@media (max-width: 600px) {
+		font-size: 0.8rem;
+	}
 `;
 
 export const Box = styled.div.attrs({
