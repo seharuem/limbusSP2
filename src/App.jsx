@@ -1,8 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { filters } from './filter';
-import { Tab } from './style';
+import { Tab, Box } from './style';
 import FilterBox from './filterBox';
+import Dots from './Dots';
+
+const imgFolder = [
+	{ folder: 'logo', count: 12 },
+	{ folder: 'res', count: 7 },
+	{ folder: 'key', count: 10 },
+	{ folder: 'key2', count: 6 }
+];
+
+const imgPaths = [];
+imgFolder.forEach((item) => {
+	for (let i = 0; i < item.count; i++) {
+		imgPaths.push(`./img/${item.folder}/${i}.webp`);
+	}
+});
 
 function App() {
 	const menu = ['수감자', '자원', '주요 키워드', '기타 키워드'];
@@ -15,6 +30,24 @@ function App() {
 		setTabIndex(index);
 		setOnFilter(filters[index]);
 	};
+
+	const [load, setLoad] = useState(false);
+
+	useEffect(() => {
+		setLoad(false);
+
+		let loadedCount = 0;
+		imgPaths.forEach((path) => {
+			const img = new Image();
+			img.src = path;
+			img.onload = () => {
+				loadedCount++;
+				if (loadedCount === imgPaths.length) {
+					setLoad(true);
+				}
+			};
+		});
+	}, [tabIndex]);
 
 	return (
 		<>
@@ -36,11 +69,17 @@ function App() {
 					))}
 				</div>
 
-				<FilterBox
-					tabIndex={tabIndex}
-					onFilter={onFilter}
-					setOnFilter={setOnFilter}
-				/>
+				<Box>
+					{!load ? (
+						<Dots />
+					) : (
+						<FilterBox
+							tabIndex={tabIndex}
+							onFilter={onFilter}
+							setOnFilter={setOnFilter}
+						/>
+					)}
+				</Box>
 			</div>
 		</>
 	);
