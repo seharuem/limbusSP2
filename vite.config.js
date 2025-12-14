@@ -3,9 +3,8 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
 // https://vite.dev/config/
-export default defineConfig(({ mode }) => {
+export default defineConfig(() => {
 	return {
-		plugins: [react(), tailwindcss()],
-		base: '/limbusSP2/'
+		plugins: [react(), tailwindcss()]
 	};
 });
