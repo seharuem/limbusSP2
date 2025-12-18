@@ -28,7 +28,7 @@ export default function CharCard({ item, img, char }) {
 						<ResIcon num={item.res} req={item.req} />
 					)}
 				</span>
-				<span className='text-start flex-1'>{item.detail}</span>
+				<span className='text-start flex-1 break-keep'>{item.detail}</span>
 			</div>
 		</Card>
 	);
