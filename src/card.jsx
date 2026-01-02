@@ -1,13 +1,10 @@
 import { res } from './filter';
 import { Card, Img, Title, Res } from './style';
 
-export const ResIcon = ({ num, req }) => {
+export const ResIcon = ({ num }) => {
 	return (
-		<span className='flex gap-1 text-[15px]'>
-			<div className='flex gap-0.5 items-center'>
-				<Res $res={num} />({res[num]})
-			</div>
-			× {req}
+		<span className='flex gap-1 items-center text-[15px]'>
+			<Res $res={num} />({res[num]})
 		</span>
 	);
 };
@@ -21,12 +18,9 @@ export default function CharCard({ item, img, char }) {
 					{item.name} {char}
 				</span>
 				<Title $res={item.res}>{item.title}</Title>
-				<span className='flex gap-3'>
-					{Array.isArray(item.res) ? (
-						item.res.map((i) => <ResIcon key={i} num={i} req={item.req} />)
-					) : (
-						<ResIcon num={item.res} req={item.req} />
-					)}
+				<span className='flex gap-1'>
+					{Array.isArray(item.res) ? item.res.map((i) => <ResIcon key={i} num={i} />) : <ResIcon num={item.res} />}×{' '}
+					{item.req}
 				</span>
 				<span className='text-start flex-1 break-keep'>{item.detail}</span>
 			</div>
