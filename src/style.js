@@ -5,7 +5,9 @@ export const Tab = styled.button.attrs({
 	className: 'flex-1 pt-2 pb-1 rounded-t-2xl text-white bg-white/20'
 })`
 	font-family: KOTRA_BOLD;
-	transition: background-color 0.2s ease-out, color 0.3s ease-out;
+	transition:
+		background-color 0.2s ease-out,
+		color 0.3s ease-out;
 
 	&:hover {
 		background-color: #666;
@@ -21,8 +23,7 @@ export const Tab = styled.button.attrs({
 `;
 
 export const Box = styled.div.attrs({
-	className:
-		'flex-1 border-3 border-solid border-(--main) rounded-b-2xl py-3 px-1 flex flex-col gap-3 overflow-hidden'
+	className: 'flex-1 border-3 border-solid border-(--main) rounded-b-2xl py-3 px-1 flex flex-col gap-3 overflow-hidden'
 })``;
 
 const fade = keyframes`
@@ -50,15 +51,16 @@ export const Filter = styled.label.attrs({
 	className: 'flex gap-1 items-center cursor-pointer relative'
 })`
 	font-family: KOTRA_BOLD;
-	transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+	transition:
+		background-color 0.2s ease-out,
+		border-color 0.2s ease-out;
 
 	&::before {
 		content: ${(props) => props.$num >= 0 && "''"};
 		width: 1.5em;
 		aspect-ratio: 1;
 		background: center / contain no-repeat;
-		background-image: url(./img/${(props) => tabFolder(props.$tab)}/${(props) =>
-			props.$num}.webp);
+		background-image: url(./img/${(props) => tabFolder(props.$tab)}/${(props) => props.$num}.webp);
 	}
 	&:hover input {
 		border-color: var(--main);
@@ -105,8 +107,7 @@ export const Check = styled.input.attrs({
 `;
 
 export const DataWrap = styled.div.attrs({
-	className:
-		'flex-1 flex justify-center gap-4 flex-wrap py-1 pl-3 pr-2 overflow-auto'
+	className: 'flex-1 flex justify-center gap-4 flex-wrap py-1 pl-3 pr-2 overflow-auto'
 })`
 	scrollbar-gutter: stable;
 	&::-webkit-scrollbar {
@@ -133,7 +134,9 @@ const shadow = (num) => {
 		const first = keyColor[num[0]];
 		const second = num[1] > 6 ? first : keyColor[num[1]];
 		return css`
-			box-shadow: -1px -1px 3px ${first}, 1px 1px 3px ${second};
+			box-shadow:
+				-1px -1px 3px ${first},
+				1px 1px 3px ${second};
 		`;
 	}
 	if (num > 6)
@@ -143,7 +146,9 @@ const shadow = (num) => {
 	if (num >= 0) {
 		const color = keyColor[num];
 		return css`
-			box-shadow: -1px -1px 3px ${color}, 1px 1px 3px ${color};
+			box-shadow:
+				-1px -1px 3px ${color},
+				1px 1px 3px ${color};
 		`;
 	}
 	return css`
@@ -152,8 +157,9 @@ const shadow = (num) => {
 };
 
 export const Card = styled.div.attrs({
-	className: 'flex-1 flex gap-2 bg-white/10 p-5 h-max rounded-2xl font-semibold'
+	className: 'flex-1 flex gap-2 p-5 h-max rounded-2xl font-semibold'
 })`
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
 	font-family: Pretendard;
 	min-width: min(100%, 420px);
 	max-width: 600px;
@@ -166,15 +172,11 @@ export const Card = styled.div.attrs({
 `;
 
 export const Img = styled.div.attrs({
-	className: 'rounded-lg border-3 border-solid w-max h-40 aspect-3/4'
+	className: 'rounded-lg border-2 border-solid w-max h-40 aspect-3/4'
 })`
 	background: center / contain no-repeat;
-	background-image: url(./img/char/${(props) =>
-		`${props.$img}/${props.$num}.png`});
-	border-color: ${(props) =>
-		`${
-			props.$num > 300 ? border[0] : props.$num > 200 ? border[1] : border[2]
-		}`};
+	background-image: url(./img/char/${(props) => `${props.$img}/${props.$num}.png`});
+	border-color: ${(props) => `${props.$num > 300 ? border[0] : props.$num > 200 ? border[1] : border[2]}`};
 
 	@media (max-width: 600px) {
 		align-self: center;
