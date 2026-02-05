@@ -195,7 +195,7 @@ export const char11 = [
 	},
 	{
 		id: 309,
-		key2: 1,
+		key2: [1, 2],
 		name: '거미집 소지 제자',
 		title: '정념[靜念]',
 		res: 5,
