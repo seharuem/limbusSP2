@@ -19,8 +19,17 @@ export default function CharCard({ item, img, char }) {
 				</span>
 				<Title $res={item.res}>{item.title}</Title>
 				<span className='flex gap-1'>
-					{Array.isArray(item.res) ? item.res.map((i) => <ResIcon key={i} num={i} />) : <ResIcon num={item.res} />}×{' '}
-					{item.req}
+					{item.req2 ? (
+						<>
+							<ResIcon num={item.res[0]} />× {item.req}
+							<ResIcon num={item.res[1]} />× {item.req2}
+						</>
+					) : (
+						<>
+							{Array.isArray(item.res) ? item.res.map((i) => <ResIcon key={i} num={i} />) : <ResIcon num={item.res} />}×{' '}
+							{item.req}
+						</>
+					)}
 				</span>
 				<span className='text-start flex-1 break-keep'>{item.detail}</span>
 			</div>
