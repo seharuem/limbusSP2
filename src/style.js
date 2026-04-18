@@ -2,7 +2,7 @@ import styled, { css, keyframes } from 'styled-components';
 import { res, keyColor, border } from './color';
 
 export const Tab = styled.button.attrs({
-	className: 'flex-1 pt-2 pb-1 rounded-t-2xl text-white bg-white/20'
+	className: 'flex-1 pt-2 pb-1 text-white bg-white/20 backdrop-blur-sm'
 })`
 	font-family: KOTRA_BOLD;
 	transition:
@@ -13,7 +13,7 @@ export const Tab = styled.button.attrs({
 		background-color: #666;
 	}
 	&.active {
-		background-color: var(--main);
+		background-color: rgba(255, 255, 255, 0.8);
 		color: black;
 	}
 
@@ -23,7 +23,7 @@ export const Tab = styled.button.attrs({
 `;
 
 export const Box = styled.div.attrs({
-	className: 'flex-1 border-3 border-solid border-(--main) rounded-b-2xl py-3 px-1 flex flex-col gap-3 overflow-hidden'
+	className: 'flex-1 border-t border-solid border-white/80 pt-3 px-1 flex flex-col gap-3 overflow-hidden bg-black/40'
 })``;
 
 const fade = keyframes`
@@ -157,7 +157,7 @@ const shadow = (num) => {
 };
 
 export const Card = styled.div.attrs({
-	className: 'flex-1 flex gap-2 p-5 h-max rounded-2xl font-semibold'
+	className: 'flex-1 flex gap-2 p-5 h-max rounded-sm font-semibold backdrop-blur-sm'
 })`
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
 	font-family: Pretendard;
@@ -172,11 +172,12 @@ export const Card = styled.div.attrs({
 `;
 
 export const Img = styled.div.attrs({
-	className: 'rounded-lg border-2 border-solid w-max h-40 aspect-3/4'
+	className: 'rounded-sm w-max h-40 aspect-3/4'
 })`
 	background: center / contain no-repeat;
 	background-image: url(./img/char/${(props) => `${props.$img}/${props.$num}.png`});
-	border-color: ${(props) => `${props.$num > 300 ? border[0] : props.$num > 200 ? border[1] : border[2]}`};
+	box-shadow: inset 0 0 4px ${(props) => `${props.$num > 300 ? border[0] : props.$num > 200 ? border[1] : border[2]}`};
+	border: 1px solid ${(props) => `${props.$num > 300 ? border[0] : props.$num > 200 ? border[1] : border[2]}`};
 
 	@media (max-width: 600px) {
 		align-self: center;

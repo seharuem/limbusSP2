@@ -1,9 +1,20 @@
 @import 'tailwindcss';
 
 :root {
-	font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
-		'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR',
-		'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+	font-family:
+		Pretendard,
+		-apple-system,
+		BlinkMacSystemFont,
+		system-ui,
+		Roboto,
+		'Helvetica Neue',
+		'Segoe UI',
+		'Apple SD Gothic Neo',
+		'Noto Sans KR',
+		'Malgun Gothic',
+		'Apple Color Emoji',
+		'Segoe UI Emoji',
+		'Segoe UI Symbol',
 		sans-serif;
 	font-weight: 400;
 
@@ -27,6 +38,7 @@ body {
 	display: flex;
 	justify-content: center;
 	min-width: 320px;
+	background: black url(./assets/bg.png) center / cover no-repeat;
 }
 
 button {
