@@ -57,7 +57,7 @@ function App() {
 			</h1>
 
 			<div className='flex flex-col flex-1 min-h-0'>
-				<div className='flex gap-0.5 w-full'>
+				<div className='flex gap-2 w-full max-sm:px-2'>
 					{menu.map((item, index) => (
 						<Tab
 							key={item}

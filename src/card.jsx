@@ -31,7 +31,7 @@ export default function CharCard({ item, img, char }) {
 						</>
 					)}
 				</span>
-				<span className='text-start flex-1 break-keep'>{item.detail}</span>
+				<span className='text-start flex-1 break-keep font-normal max-sm:text-sm'>{item.detail}</span>
 			</div>
 		</Card>
 	);
