@@ -2,14 +2,11 @@ import styled, { css, keyframes } from 'styled-components';
 import { res, keyColor, border } from './color';
 
 export const Tab = styled.button.attrs({
-	className: 'flex-1 py-1 rounded-sm text-white border-3 bg-black/30 backdrop-blur-sm'
+	className: 'flex-1 sm:max-w-30 py-1 sm:px-2 rounded-sm border-3 bg-black/30 backdrop-blur-sm'
 })`
 	border-color: #523521;
 	font-family: KOTRA_BOLD;
-	transition:
-		border-color 0.2s ease-out,
-		color 0.3s ease-out;
-
+	transition: border-color 0.2s ease-out;
 	&:hover {
 		border-color: #ffaa0080;
 	}
@@ -50,9 +47,9 @@ const tabFolder = (tab) => {
 };
 
 export const Filter = styled.label.attrs({
-	className: 'flex gap-1 items-center cursor-pointer relative'
+	className: 'flex gap-1 items-center cursor-pointer relative font-medium'
 })`
-	font-family: KOTRA_BOLD;
+	font-family: scDream;
 	transition:
 		background-color 0.2s ease-out,
 		border-color 0.2s ease-out;
@@ -109,7 +106,7 @@ export const Check = styled.input.attrs({
 `;
 
 export const DataWrap = styled.div.attrs({
-	className: 'flex-1 flex justify-center gap-4 flex-wrap py-1 pl-3 pr-2 overflow-auto'
+	className: 'flex-1 flex justify-center gap-2.5 max-sm:gap-2 flex-wrap py-1 sm:pr-1 overflow-auto'
 })`
 	scrollbar-gutter: stable;
 	&::-webkit-scrollbar {
@@ -162,7 +159,7 @@ export const Card = styled.div.attrs({
 	className: 'flex-1 flex gap-2 p-5 h-max rounded-sm backdrop-blur-sm'
 })`
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
-	font-family: Pretendard;
+	font-family: scDream;
 	min-width: min(100%, 420px);
 	max-width: 600px;
 	${(props) => shadow(props.$num)}
@@ -187,7 +184,7 @@ export const Img = styled.div.attrs({
 `;
 
 export const Title = styled.span.attrs({
-	className: 'w-full rounded-full text-[15px] break-keep font-semibold'
+	className: 'px-2 pt-0.5 rounded-sm text-sm max-sm:text-[13px] break-keep font-medium'
 })`
 	background: ${(props) =>
 		Array.isArray(props.$res)
@@ -203,7 +200,7 @@ export const Res = styled.div.attrs({
 `;
 
 export const St = styled.span.attrs({
-	className: 'font-extrabold'
+	className: 'font-semibold'
 })``;
 
 export const Text = styled.div.attrs({

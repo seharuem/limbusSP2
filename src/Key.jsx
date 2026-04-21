@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import test from '/img/key/0.webp';
 
 const KeyStyle = styled.span.attrs({
-	className: 'font-extrabold underline pl-4.5 relative'
+	className: 'font-semibold pl-4.5 relative'
 })`
 	color: ${(props) => (props.$num > 6 ? '#eee' : keyColor[props.$num])};
 	&::before {
@@ -14,7 +14,7 @@ const KeyStyle = styled.span.attrs({
 		background: url(/img/key/${(props) => props.$num}.webp) center / contain no-repeat;
 		position: absolute;
 		left: 0;
-		top: 1px;
+		top: 0;
 	}
 `;
 

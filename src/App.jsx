@@ -52,34 +52,20 @@ function App() {
 	return (
 		<>
 			<h1>
-				<span>LIMBUS COMPANY</span>
-				서포트 패시브
+				Limbus
+				<span>support passive</span>
 			</h1>
 
 			<div className='flex flex-col flex-1 min-h-0'>
 				<div className='flex gap-2 w-full max-sm:px-2'>
 					{menu.map((item, index) => (
-						<Tab
-							key={item}
-							className={tabIndex === index && 'active'}
-							onClick={() => tabClick(index)}
-						>
+						<Tab key={item} className={tabIndex === index && 'active'} onClick={() => tabClick(index)}>
 							{item}
 						</Tab>
 					))}
 				</div>
 
-				<Box>
-					{!load ? (
-						<Dots />
-					) : (
-						<FilterBox
-							tabIndex={tabIndex}
-							onFilter={onFilter}
-							setOnFilter={setOnFilter}
-						/>
-					)}
-				</Box>
+				<Box>{!load ? <Dots /> : <FilterBox tabIndex={tabIndex} onFilter={onFilter} setOnFilter={setOnFilter} />}</Box>
 			</div>
 		</>
 	);

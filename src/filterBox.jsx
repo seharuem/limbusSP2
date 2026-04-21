@@ -50,7 +50,7 @@ function FilterBox({ tabIndex, onFilter, setOnFilter }) {
 
 	return (
 		<>
-			<div className='flex gap-1 px-3'>
+			<div className='flex gap-1'>
 				<FilterWrap>
 					{!isFold ? (
 						<>

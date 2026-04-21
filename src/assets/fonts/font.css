@@ -1,6 +1,7 @@
 @font-face {
 	font-family: KOTRA_BOLD;
-	src: url('./KOTRA_BOLD.otf') format('opentype'),
+	src:
+		url('./KOTRA_BOLD.otf') format('opentype'),
 		url('./KOTRA_BOLD.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
@@ -12,4 +13,39 @@
 	font-style: normal;
 	font-display: swap;
 	src: url('./PretendardVariable.woff2') format('woff2-variations');
+}
+
+@font-face {
+	font-family: BebasNeue;
+	font-weight: normal;
+	font-style: normal;
+	src: url('./BebasNeue-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: Tagmarker;
+	font-weight: normal;
+	font-style: normal;
+	src: url('./tagmarker.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: scDream;
+	font-weight: 400;
+	font-style: normal;
+	src: url('./SCDream4.otf') format('opentype');
+}
+
+@font-face {
+	font-family: scDream;
+	font-weight: 500;
+	font-style: normal;
+	src: url('./SCDream5.otf') format('opentype');
+}
+
+@font-face {
+	font-family: scDream;
+	font-weight: 600;
+	font-style: normal;
+	src: url('./SCDream6.otf') format('opentype');
 }
