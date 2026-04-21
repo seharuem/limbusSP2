@@ -130,36 +130,29 @@ export const Hide = styled.button.attrs({
 `;
 
 const shadow = (num) => {
-	if (Array.isArray(num)) {
-		if (num.every((n) => n > 6)) {
-			return css`
-				box-shadow: inset 0 0 2px #886600;
-			`;
-		}
+	const isArray = Array.isArray(num);
+	const isSpecial = isArray ? num.every((n) => n > 6) : num > 6;
 
-		const first = keyColor[num[0]];
-		const second = num[1] > 6 ? first : keyColor[num[1]];
-		return css`
-			box-shadow:
-				inset 1px 1px 2px ${first},
-				inset -1px -1px 2px ${second};
-		`;
+	let first, second;
+
+	if (isSpecial) {
+		first = second = keyColor[7];
+	} else if (isArray) {
+		first = keyColor[num[0]];
+		second = num[1] > 6 ? first : keyColor[num[1]];
+	} else if (num >= 0) {
+		first = second = keyColor[num];
 	}
-	if (num > 6)
-		return css`
-			box-shadow: inset 0 0 2px #886600;
-		`;
-	if (num >= 0) {
-		const color = keyColor[num];
-		return css`
-			box-shadow:
-				inset -1px -1px 2px ${color},
-				inset 1px 1px 2px ${color};
-		`;
-	}
-	return css`
-		box-shadow: 0 0 2px #999;
-	`;
+
+	return first && second
+		? css`
+				box-shadow:
+					inset 1px 1px 2px ${first},
+					inset -1px -1px 2px ${second};
+			`
+		: css`
+				box-shadow: 0 0 2px #999;
+			`;
 };
 
 export const Card = styled.div.attrs({

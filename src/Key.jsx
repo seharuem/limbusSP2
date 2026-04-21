@@ -6,7 +6,7 @@ import test from '/img/key/0.webp';
 const KeyStyle = styled.span.attrs({
 	className: 'font-semibold relative'
 })`
-	color: ${(props) => (props.$num > 6 ? '#886600' : keyColor[props.$num])};
+	color: ${(props) => (props.$num > 6 ? keyColor[7] : keyColor[props.$num])};
 	padding-left: ${(props) => (props.$num > 6 ? '1.2rem' : '1rem')};
 	&::before {
 		content: '';
