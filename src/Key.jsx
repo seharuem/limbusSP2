@@ -4,9 +4,10 @@ import styled from 'styled-components';
 import test from '/img/key/0.webp';
 
 const KeyStyle = styled.span.attrs({
-	className: 'font-semibold pl-4.5 relative'
+	className: 'font-semibold relative'
 })`
-	color: ${(props) => (props.$num > 6 ? '#eee' : keyColor[props.$num])};
+	color: ${(props) => (props.$num > 6 ? '#886600' : keyColor[props.$num])};
+	padding-left: ${(props) => (props.$num > 6 ? '1.2rem' : '1rem')};
 	&::before {
 		content: '';
 		width: 1rem;
@@ -15,6 +16,14 @@ const KeyStyle = styled.span.attrs({
 		position: absolute;
 		left: 0;
 		top: 0;
+	}
+
+	@media (max-width: 480px) {
+		padding-left: ${(props) => (props.$num > 6 ? '1rem' : '0.8rem')};
+		&::before {
+			width: 0.8rem;
+			translate: 0 0.5px;
+		}
 	}
 `;
 

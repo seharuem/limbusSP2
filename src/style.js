@@ -2,7 +2,7 @@ import styled, { css, keyframes } from 'styled-components';
 import { res, keyColor, border } from './color';
 
 export const Tab = styled.button.attrs({
-	className: 'flex-1 sm:max-w-30 py-1 sm:px-2 rounded-sm border-3 bg-black/30 backdrop-blur-sm'
+	className: 'flex-1 sm:max-w-25 py-1 sm:px-2 rounded-sm border-3 bg-black/30 backdrop-blur-sm text-sm'
 })`
 	border-color: #523521;
 	font-family: KOTRA_BOLD;
@@ -106,7 +106,8 @@ export const Check = styled.input.attrs({
 `;
 
 export const DataWrap = styled.div.attrs({
-	className: 'flex-1 flex justify-center gap-2.5 max-sm:gap-2 flex-wrap py-1 sm:pr-1 overflow-auto'
+	className:
+		'flex-1 grid grid-cols-[repeat(auto-fit,_minmax(min(100%,500px),_1fr))] justify-center gap-2.5 max-sm:gap-2 p-1 pr-3 overflow-auto'
 })`
 	scrollbar-gutter: stable;
 	&::-webkit-scrollbar {
@@ -130,6 +131,12 @@ export const Hide = styled.button.attrs({
 
 const shadow = (num) => {
 	if (Array.isArray(num)) {
+		if (num.every((n) => n > 6)) {
+			return css`
+				box-shadow: inset 0 0 2px #886600;
+			`;
+		}
+
 		const first = keyColor[num[0]];
 		const second = num[1] > 6 ? first : keyColor[num[1]];
 		return css`
@@ -140,7 +147,7 @@ const shadow = (num) => {
 	}
 	if (num > 6)
 		return css`
-			box-shadow: inset 0 0 2px #eee;
+			box-shadow: inset 0 0 2px #886600;
 		`;
 	if (num >= 0) {
 		const color = keyColor[num];
@@ -160,12 +167,10 @@ export const Card = styled.div.attrs({
 })`
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
 	font-family: scDream;
-	min-width: min(100%, 420px);
-	max-width: 600px;
 	${(props) => shadow(props.$num)}
 	animation: ${fade} 0.3s ease-out;
 
-	@media (max-width: 600px) {
+	@media (max-width: 480px) {
 		flex-direction: column;
 	}
 `;
@@ -193,10 +198,19 @@ export const Title = styled.span.attrs({
 `;
 
 export const Res = styled.div.attrs({
-	className: 'aspect-square size-5'
+	className: 'aspect-square size-5 max-sm:size-4'
 })`
+	translate: 0 -1px;
 	background: center / contain no-repeat;
 	background-image: url(/img/res/${(props) => `${props.$res}.webp`});
+`;
+
+export const Detail = styled.span.attrs({
+	className: 'text-start flex-1 break-keep font-normal text-[15px]'
+})`
+	@media (max-width: 480px) {
+		font-size: 0.8rem;
+	}
 `;
 
 export const St = styled.span.attrs({
