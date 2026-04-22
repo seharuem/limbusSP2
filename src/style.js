@@ -11,7 +11,7 @@ export const Tab = styled.button.attrs({
 		border-color: #ffaa0080;
 	}
 	&.active {
-		border-color: #ffaa00;
+		border-color: var(--main);
 		box-shadow:
 			0 0 4px #972213,
 			inset 0 0 4px #972213;
@@ -107,7 +107,7 @@ export const Check = styled.input.attrs({
 
 export const DataWrap = styled.div.attrs({
 	className:
-		'flex-1 grid grid-cols-[repeat(auto-fit,_minmax(min(100%,500px),_1fr))] justify-center gap-2.5 max-sm:gap-2 p-1 pr-3 overflow-auto'
+		'flex-1 grid auto-rows-max grid-cols-[repeat(auto-fit,_minmax(min(100%,500px),_1fr))] justify-center gap-2.5 max-sm:gap-2 p-1 pr-3 overflow-auto'
 })`
 	scrollbar-gutter: stable;
 	&::-webkit-scrollbar {

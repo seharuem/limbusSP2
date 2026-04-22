@@ -52,7 +52,7 @@ function App() {
 	return (
 		<>
 			<h1>
-				Limbus
+				<span>Limbus</span>
 				<span>support passive</span>
 			</h1>
 
