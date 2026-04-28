@@ -56,7 +56,7 @@ function App() {
 				<span>support passive</span>
 			</h1>
 
-			<div className='flex flex-col flex-1 min-h-0'>
+			<div className='flex flex-col flex-1 min-h-0 relative'>
 				<div className='flex gap-2 w-full max-sm:px-2'>
 					{menu.map((item, index) => (
 						<Tab key={item} className={tabIndex === index && 'active'} onClick={() => tabClick(index)}>

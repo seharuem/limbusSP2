@@ -31,9 +31,51 @@ const fade = keyframes`
 `;
 
 export const FilterWrap = styled.div.attrs({
-	className: 'flex flex-wrap gap-3'
+	className: 'absolute right-0 top-0 max-sm:top-10 max-lg:right-2 flex gap-2 max-lg:flex-col max-lg:items-end'
 })`
-	animation: ${fade} 0.3s ease-out;
+	&:has(:checked) button {
+		border-color: var(--main);
+	}
+`;
+
+export const FilterIcon = styled.button.attrs({
+	type: 'button',
+	className:
+		'rounded-sm bg-black/30 flex items-center gap-1 text-sm max-sm:text-xs px-2 py-1 border-2 border-white/10 backdrop-blur-xs z-10 lg:order-2'
+})`
+	transition:
+		border-color 0.2s ease-out,
+		background-color 0.2s ease-out;
+	background-color: #52352180;
+	&:hover {
+		background-color: #523521;
+	}
+	font-family: scDream;
+	&::before {
+		content: '';
+		width: 1rem;
+		aspect-ratio: 1;
+		background: url(/img/filter.svg) center / contain no-repeat;
+	}
+	@media (width < 40rem) {
+		&::before {
+			width: 0.8rem;
+		}
+	}
+`;
+
+export const FilterGrid = styled.div.attrs({
+	className:
+		'absolute right-0 top-10 max-sm:top-8 w-max grid grid-cols-3 gap-3 bg-black/60 backdrop-blur-xs rounded-sm p-2 border border-white/10 z-20'
+})`
+	transition:
+		opacity 0.2s ease-out,
+		visibility 0.2s ease-out;
+	&.fold {
+		visibility: hidden;
+		pointer-events: none;
+		opacity: 0;
+	}
 	&:not(:has(input)) {
 		gap: 4px;
 	}
@@ -46,17 +88,25 @@ const tabFolder = (tab) => {
 	return 'key2';
 };
 
+export const Item = styled.div.attrs({
+	className: 'size-6 max-sm:size-4'
+})`
+	background: center / contain no-repeat;
+	background-image: url(/img/${(props) => tabFolder(props.$tab)}/${(props) => props.$num}.webp);
+`;
+
 export const Filter = styled.label.attrs({
-	className: 'flex gap-1 items-center cursor-pointer relative font-medium'
+	className:
+		'w-20 flex flex-col gap-1 items-center justify-center cursor-pointer relative font-medium text-xs bg-white/10 hover:bg-white/20 py-1 rounded-sm border-2 border-transparent'
 })`
 	font-family: scDream;
 	transition:
-		background-color 0.2s ease-out,
-		border-color 0.2s ease-out;
+		border-color 0.2s ease-out,
+		background-color 0.2s ease-out;
 
 	&::before {
 		content: ${(props) => props.$num >= 0 && "''"};
-		width: 1.5em;
+		width: 2em;
 		aspect-ratio: 1;
 		background: center / contain no-repeat;
 		background-image: url(/img/${(props) => tabFolder(props.$tab)}/${(props) => props.$num}.webp);
@@ -64,54 +114,24 @@ export const Filter = styled.label.attrs({
 	&:hover input {
 		border-color: var(--main);
 	}
-
-	@media (max-width: 480px) {
-		font-size: 0.75rem;
+	&:has(:checked) {
+		border-color: var(--main);
 	}
 `;
 
 export const Check = styled.input.attrs({
 	type: 'checkbox',
 	name: 'filter',
-	className: 'cursor-pointer shrink-0'
-})`
-	appearance: none;
-	width: 1.1rem;
-	aspect-ratio: 1;
-	border: 2px solid white;
-	border-radius: 4px;
-
-	&:checked {
-		border-color: var(--main);
-	}
-
-	& + div {
-		width: 1.3rem;
-		aspect-ratio: 1;
-		background: var(--main);
-		mask: center / contain no-repeat;
-		mask-image: url(/img/check.svg);
-		position: absolute;
-		right: 0;
-		translate: 5px -5px;
-	}
-
-	@media (max-width: 480px) {
-		width: 1rem;
-
-		& + div {
-			width: 1.2rem;
-		}
-	}
-`;
+	className: 'hidden'
+})``;
 
 export const DataWrap = styled.div.attrs({
 	className:
-		'flex-1 grid auto-rows-max grid-cols-[repeat(auto-fit,_minmax(min(100%,500px),_1fr))] justify-center gap-2.5 max-sm:gap-2 p-1 pr-3 overflow-auto'
+		'flex-1 grid auto-rows-max grid-cols-[repeat(auto-fit,_minmax(min(100%,500px),_1fr))] justify-center gap-2.5 max-sm:gap-2 p-1 pr-2 overflow-auto'
 })`
 	scrollbar-gutter: stable;
 	&::-webkit-scrollbar {
-		width: 4px;
+		width: 2px;
 	}
 	&::-webkit-scrollbar-thumb {
 		background-color: var(--main);
