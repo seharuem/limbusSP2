@@ -52,13 +52,15 @@ function FilterBox({ tabIndex, onFilter, setOnFilter }) {
 		<>
 			<FilterWrap ref={foldRef}>
 				<FilterIcon onClick={() => setIsFold(!isFold)}>필터</FilterIcon>
-				<div className='flex gap-1 items-center bg-white/10 backdrop-blur-xs rounded-sm p-1 w-max z-10 max-lg:flex-col'>
-					{filters[tabIndex].map((item, i) => {
-						if (!onFilter.includes(item)) return;
+				{onFilter.length > 0 && (
+					<div className='flex gap-1 items-center border-2 bg-black/30 border-(--main)/30 backdrop-blur-xs rounded-sm p-1 w-max z-10 max-lg:flex-col'>
+						{filters[tabIndex].map((item, i) => {
+							if (!onFilter.includes(item)) return;
 
-						return <Item key={item} $tab={tabIndex} $num={i} />;
-					})}
-				</div>
+							return <Item key={item} $tab={tabIndex} $num={i} />;
+						})}
+					</div>
+				)}
 				<FilterGrid className={isFold ? 'fold' : ''}>
 					<Filter className='col-span-3 w-full'>
 						All
