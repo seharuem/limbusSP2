@@ -53,7 +53,7 @@ function FilterBox({ tabIndex, onFilter, setOnFilter }) {
 			<FilterWrap ref={foldRef}>
 				<FilterIcon onClick={() => setIsFold(!isFold)}>필터</FilterIcon>
 				{onFilter.length > 0 && (
-					<div className='flex gap-1 items-center border-2 bg-black/30 border-(--main)/30 backdrop-blur-xs rounded-sm p-1 w-max z-10 max-lg:flex-col'>
+					<div className='flex gap-1 items-center border-2 bg-black/30 border-(--main)/80 backdrop-blur-xs rounded-sm p-1 w-max z-10 max-lg:flex-col'>
 						{filters[tabIndex].map((item, i) => {
 							if (!onFilter.includes(item)) return;
 
