@@ -55,4 +55,8 @@ h1 > span:last-child {
 	#root {
 		padding-inline: 0.5rem;
 	}
+
+	.foot {
+		font-size: 10px;
+	}
 }
