@@ -67,13 +67,13 @@ function App() {
 
 				<Box>
 					{!load ? <Dots /> : <FilterBox tabIndex={tabIndex} onFilter={onFilter} setOnFilter={setOnFilter} />}
-					<div className='text-xs text-left flex flex-col gap-1.5 opacity-70'>
+					<footer className='text-xs text-left flex flex-col gap-1.5 opacity-70'>
 						© 2026 Limbus Support Passive
 						<div className='flex flex-wrap gap-x-1 gap-y-0.5 foot'>
 							<span>본 사이트는 비공식 팬 프로젝트이며,</span>
 							<span> 사용된 에셋의 저작권은 Project Moon에 있습니다.</span>
 						</div>
-					</div>
+					</footer>
 				</Box>
 			</div>
 		</>
