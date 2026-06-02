@@ -195,7 +195,7 @@ export const char12 = [
 	},
 	{
 		id: 310,
-		key2: 1,
+		key2: [0, 1],
 		name: '거미집 중지 아비',
 		title: '누가 가족을 건드렸나',
 		res: 6,
